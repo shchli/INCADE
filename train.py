@@ -51,8 +51,8 @@ def parse_args():
         'n_exp': 1,
         'img_dim': 256,
         'txt_dim': 256,
-        'mu_alpha':0.05,
-        'mu_beta':0.02,
+        'mu_lambda2':0.05,
+        'mu_lambda1':0.02,
         'group_num':4,
         'gtype':'gmm',
         'rgcngraph':True
@@ -173,7 +173,7 @@ def train_decoder(args):
             
             spec_loss = ce_criterion(spec_s, spec_label_s) + ce_criterion(spec_i, spec_label_i) + ce_criterion(spec_t, spec_label_t)
             share_loss = F.kl_div(share_s, share_label_s) + F.kl_div(share_i, share_label_i) + F.kl_div(share_t, share_label_t)
-            loss = model.loss_func(output, train_values) + args.mu_alpha * share_loss +args.mu_beta * spec_loss
+            loss = model.loss_func(output, train_values) + args.mu_lambda2 * share_loss +args.mu_lambda1 * spec_loss
             loss.backward()
             optimizer.step()
             epoch_loss.append(loss.data.item())
