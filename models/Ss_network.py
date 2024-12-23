@@ -7,7 +7,7 @@ import torch.nn.functional as F
 
 from layers.layer import *
 from .model import BaseModel,RGCNCell
-from .Neighbor_graph import Community_graph
+from .Community_graph import Community_graph
 
 
 
