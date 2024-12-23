@@ -14,9 +14,9 @@
 
 
 ```bash
-nohup python train.py --cuda 0 --lr 0.001 --lambda2 0.05 --mu_lambda1 0.02 --dim 200 --dataset MKG-W --epochs 2000 --group_num 4 --gtype gmm --rgcngraph True > log.txt &
+nohup python train.py --cuda 0 --lr 0.001 --lambda2 0.05 --lambda1 0.02 --dim 200 --dataset MKG-W --epochs 2000 --group_num 4 --gtype gmm --rgcngraph True > log.txt &
 
-nohup python train.py --cuda 0 --lr 0.001 --lambda2 0.05 --mu_lambda1 0.02 --dim 200 --dataset DB15K --epochs 2000 --group_num 4 --gtype gmm --rgcngraph True > log.txt &
+nohup python train.py --cuda 0 --lr 0.001 --lambda2 0.05 --lambda1 0.02 --dim 200 --dataset DB15K --epochs 2000 --group_num 4 --gtype gmm --rgcngraph True > log.txt &
 ```
 
 
